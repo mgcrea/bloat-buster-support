@@ -1,3 +1,7 @@
+<div align="left">
+  <img src="./app-icon.png" alt="BloatBuster Icon" width="256" height="256">
+</div>
+
 # BloatBuster Support
 
 Welcome to BloatBuster support! This repository is dedicated to help you get the most out of BloatBuster and resolve any issues you might encounter.
