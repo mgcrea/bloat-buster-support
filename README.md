@@ -25,17 +25,19 @@ If you need help with BloatBuster, here are your options:
 
 ### What is BloatBuster?
 
-BloatBuster is a macOS app that helps developers reclaim disk space by cleaning build artifacts and dependencies from development projects. It supports 14+ project types including Node.js, Rust, Python, Swift, Unity, and more.
+BloatBuster is a macOS app that helps developers reclaim disk space by cleaning build artifacts and dependencies from development projects. It supports 15+ project types including Node.js, Rust, Python, Swift, Xcode, Unity, and more.
 
 ### Is it safe to use?
 
 Yes! BloatBuster only removes build artifacts and dependencies that can be regenerated. Your source code and project files are **never touched**. Common artifacts cleaned include:
 
-- `node_modules` (Node.js)
+- `node_modules`, `.next`, `.nuxt`, `.turbo` (Node.js/JavaScript frameworks)
 - `target` (Rust)
-- `__pycache__`, `.venv` (Python)
-- `.build`, `DerivedData` (Swift/Xcode)
+- `__pycache__`, `.venv`, `venv`, `dist` (Python)
+- `.build` (Swift Package Manager)
+- `build` (Xcode)
 - `build`, `.gradle` (Java/Gradle)
+- `bin`, `obj`, `.vs` (.NET)
 - And many more...
 
 ### How do I use BloatBuster?
@@ -47,24 +49,26 @@ Yes! BloatBuster only removes build artifacts and dependencies that can be regen
 
 ### What project types are supported?
 
-BloatBuster supports 14+ development environments:
+BloatBuster supports 15+ development environments:
 
 | Project Type | Artifacts Cleaned |
 |--------------|-------------------|
-| Node.js | `node_modules` |
+| Node.js | `node_modules`, `.next`, `.nuxt`, `.turbo`, `.parcel-cache`, `.svelte-kit`, `dist`, `build` |
+| React Native | `node_modules`, `ios/build`, `ios/Pods`, `android/build`, `android/.gradle`, `vendor/bundle` |
+| Tauri | `node_modules`, `src-tauri/target`, `dist` |
 | Rust | `target` |
-| Python | `__pycache__`, `.venv`, `venv`, `.pytest_cache`, `.mypy_cache`, `.tox`, `*.egg-info` |
-| Swift/Xcode | `.build`, `DerivedData`, `.swiftpm` |
-| Java/Gradle | `.gradle`, `build` |
-| Java/Maven | `target` |
-| Unity | `Library`, `Temp`, `obj` |
-| .NET/C# | `bin`, `obj` |
-| Go | `vendor` |
-| Ruby | `.bundle`, `vendor/bundle` |
-| Elixir | `_build`, `deps` |
-| Scala/SBT | `target`, `project/target` |
-| Zig | `zig-cache`, `zig-out` |
-| React Native | `android/.gradle`, `android/build`, `ios/build`, `ios/Pods`, `vendor/bundle` |
+| Python | `__pycache__`, `.venv`, `venv`, `.pytest_cache`, `.mypy_cache`, `.ruff_cache`, `.tox`, `.nox`, `dist`, `.eggs`, `__pypackages__`, `.ipynb_checkpoints` |
+| Swift Package Manager | `.build` |
+| Xcode | `build` |
+| Java | `target`, `build`, `.gradle` |
+| .NET/C# | `bin`, `obj`, `.vs` |
+| Unity | `Library`, `Temp`, `Obj`, `Logs` |
+| Godot | `.godot`, `.import` |
+| CMake | `build` |
+| PHP | `vendor` |
+| Dart/Flutter | `.dart_tool`, `build` |
+| Elixir | `_build` |
+| CocoaPods | `Pods` |
 
 ### How much space can I save?
 
